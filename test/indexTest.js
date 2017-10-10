@@ -23,7 +23,6 @@ describe('driver', function() {
   })
 })
 
-
 describe('Route', function() {
   let route;
 
