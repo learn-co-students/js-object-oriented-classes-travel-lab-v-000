@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<div id="result">
+  <script>
+
+
+  let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue']
+  let aveToInt = eastWest.indexOf('1st Avenue')
+  document.getElementById('result').innerHTML = aveToInt
+
+
+
+/*
+  class Driver {
+    constructor(name, startDate) {
+      this.name = name;
+      this.startDate = new Date(startDate);
+    }
+    yearsExperienceFromBeginningOf(year) {
+      let endDate = new Date(year, 1, 1)
+      let totalYears = (endDate - this.startDate)/(365*24*60*60*1000)
+      return parseInt(totalYears)
+    }
+  }
+
+  let ted = new Driver('ted', '1983, 05, 03')
+  document.getElementById('result').innerHTML = ted.yearsExperienceFromBeginningOf(2001);
+  */
+  /*
+    var now = new Date();
+    var aFewMinsAgo = new Date(1509207374);
+
+    // another way to represent date and time
+    var birthday = new Date(1970, 08, 11, 0,0,0 );
+    document.getElementById('result').innerHTML += "Birthday: " + birthday;
+    let endDate = new Date(1982, 1, 1)
+    let timePass = endDate - birthday
+
+    document.getElementById('result').innerHTML = "Time passed: " + timePass;
+    document.getElementById('result').innerHTML = "Now: " + now;
+    document.getElementById('result').innerHTML += "<br>A few minutes ago: " + aFewMinsAgo;
+  */
+  </script>
+
+</div>
+
+
+  </body>
+</html>
