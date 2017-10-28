@@ -12,7 +12,7 @@ class Driver {
 
 // East to west
 let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue']
-/
+
 class Route {
   constructor(beginningLocation, endingLocation) {
     // both of these have attributes of horizontal and vertical
@@ -20,7 +20,21 @@ class Route {
     this.endingLocation = endingLocation;
   }
 
-  // returns an integer with the number of blocks travelled
-  //blocksTravelled(){}
-  // streets we can subtract, ie: 15th - 10th
+  aveToInt(avenue) {
+    return eastWest.indexOf(avenue)
+  }
+
+  blocksTravelled() {
+    let horizontal = this.aveToInt(this.beginningLocation.horizontal) - this.aveToInt(this.endingLocation.horizontal)
+    let vertical = this.endingLocation.vertical - this.beginningLocation.vertical
+    return (Math.abs(horizontal) + Math.abs(vertical))
+  }
+
+  estimatedTime(peak) {
+    if(peak) {
+      return this.blocksTravelled()/2
+    } else {
+      return this.blocksTravelled()/3
+    }
+  }
 }
