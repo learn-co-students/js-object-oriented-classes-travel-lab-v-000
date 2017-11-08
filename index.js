@@ -15,20 +15,10 @@ class Route {
     this.endingLocation = endingLocation;
   }
 
-// beginningLocation.horizontal: '1st Avenue'
-// beginningLocation.vertical: '34'
-// endingLocation.horizontal: 'Park'
-// endingLocation.vertical: '42'
-
   blocksTravelled() {
-
     let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue'];
     function horizontalToIndex(location) { return eastWest.indexOf(location) }
-
-    const beginningHorizontal = horizontalToIndex(this.beginningLocation.horizontal)
-    const endingHorizontal = horizontalToIndex(this.endingLocation.horizontal)
-    const horizontalBlocks = endingHorizontal - beginningHorizontal
-
+    const horizontalBlocks = horizontalToIndex(this.endingLocation.horizontal) - horizontalToIndex(this.beginningLocation.horizontal)
     const verticalBlocks = this.endingLocation.vertical - this.beginningLocation.vertical
 
     return horizontalBlocks + verticalBlocks
@@ -38,7 +28,4 @@ class Route {
     if (peak) { return this.blocksTravelled()/2 }
     else { return this.blocksTravelled()/3 }
   }
-
-
-
 }
