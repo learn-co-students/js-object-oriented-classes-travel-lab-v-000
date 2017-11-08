@@ -21,14 +21,23 @@ class Route {
 // endingLocation.vertical: '42'
 
   blocksTravelled() {
+    debugger
     let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue'];
+    function horizontalToIndex(location) { return eastWest.indexOf(location) }
+   
+    const beginningHorizontal = horizontalToIndex(self.beginningLocation.horizontal)
+    const endingHorizontal = horizontalToIndex(self.endingLocation.horizontal)
+    const horizontalBlocks = endingHorizontal - beginningHorizontal
 
-    horizontalLocationToIndex(location) {
-      return eastWest.indexOf(location);
-    }
+    const verticalBlocks = self.endingLocation.vertical - self.beginningLocation.vertical
 
-    
+    return horizontalBlocks + verticalBlocks
+  }
 
-   }
+  estimatedTime() {
+
+  }
+
+
 
 }
