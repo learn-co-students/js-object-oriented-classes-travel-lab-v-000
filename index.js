@@ -10,6 +10,12 @@ class Driver {
     return year - this.startDate.getFullYear();
   }
 
+  // soln doesn't work.
+  // yearsExperienceFromBeginningOf(year){
+  //   let endDate = new Date(year, 1, 1);
+  //   let totalYears = (endDate - this.startDate)/(365*24*60*60*1000);
+  //   return parseInt(totalYears);
+  // }
 }
 
 class Route {
@@ -18,16 +24,20 @@ class Route {
     this.endingLocation = endingLocation;
   }
 
+  avenueToInteger(avenue) {
+    return eastWest.indexOf(avenue);
+  }
+
   blocksTravelled() {
-    const startingEastWest = eastWest.indexOf(this.beginningLocation.horizontal);
-    const endingEastWest = eastWest.indexOf(this.endingLocation.horizontal);
+    const startingEastWest = this.avenueToInteger(this.beginningLocation.horizontal);
+    const endingEastWest = this.avenueToInteger(this.endingLocation.horizontal);
     const horizontalBlocksTravelled = Math.abs( startingEastWest - endingEastWest );
     const verticalBlocksTravelled = Math.abs( this.beginningLocation.vertical - this.endingLocation.vertical);
     return horizontalBlocksTravelled + verticalBlocksTravelled;
   }
 
   estimatedTime(peak) {
-    if (peak === true) {
+    if (peak) {
       return Math.floor(this.blocksTravelled() / 2);
     } else {
       return Math.floor(this.blocksTravelled() / 3);
