@@ -19,16 +19,12 @@ class Route {
   blocksTravelled() {
     const eastWest = ["1st Avenue", "2nd Avenue", "3rd Avenue", "Lexington Avenue", "Park", "Madison Avenue", "5th Avenue"];
 
-    function calcStartAve (element) {
-      return element === this.beginningLocation.horizontal;
+    function calcAvenue(ave) {
+      return eastWest.indexOf(ave)
     }
 
-    function calcEndAve (element) {
-      return element === this.endingLocation.horizontal;
-    }
-
-    const startHorizontal = eastWest.findIndex(calcStartAve, this);
-    const endHorizontal = eastWest.findIndex(calcEndAve, this);
+    const startHorizontal = calcAvenue(this.beginningLocation.horizontal);
+    const endHorizontal = calcAvenue(this.endingLocation.horizontal);
 
     let horizontal = Math.abs(startHorizontal - endHorizontal);
     let vertical = Math.abs(this.beginningLocation.vertical - this.endingLocation.vertical);
