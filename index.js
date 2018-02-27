@@ -27,9 +27,9 @@ class Route {
 
   estimatedTime (inPeakHours) {
     if (inPeakHours === true) {
-      return this.blocksTravelled() / 2 ;
+      return Math.ceil(this.blocksTravelled() / 2);
     } else {
-      return this.blocksTravelled() / 3;
+      return Math.ceil(this.blocksTravelled() / 3);
     }
   }
 }
