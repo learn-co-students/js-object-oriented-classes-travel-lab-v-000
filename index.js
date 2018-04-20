@@ -21,12 +21,25 @@ class Route {
     this.endingLocation = endingLocation
   }
 
-  blocksTravelled(){
-    return beginningLocation.vertical
+  verticalBlocks(){
+    return Math.abs(this.endingLocation.vertical-this.beginningLocation.vertical)
   }
 
-  estimatedTime(){
+  horizontalBlocks(){
+    return Math.abs(eastWest.indexOf(this.beginningLocation.horizontal)-eastWest.indexOf(this.endingLocation.horizontal))
+  }
 
+  blocksTravelled(){
+    return this.verticalBlocks()+this.horizontalBlocks();
+  }
+
+  estimatedTime(peak){
+    if (peak === true) {
+      return this.blocksTravelled()/2;
+    }
+    else {
+      return this.blocksTravelled()/3;
+    }
   }
 
 }
