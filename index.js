@@ -24,12 +24,11 @@ class Route {
     return Math.abs(result_v + result_h);
   }
 
-  estimatedTime() {
-    // return this.blocksTravelled() / 3;
-    if (this.endingLocation.vertical < 46) {
-      return Math.ceil(this.blocksTravelled() / 3);
-    } else {
+  estimatedTime(peak) {
+    if (peak) {
       return Math.ceil(this.blocksTravelled() / 2);
+    } else {
+      return Math.ceil(this.blocksTravelled() / 3);
     }
   }
 }
