@@ -14,8 +14,8 @@ class Driver {
 }
 
 class Route {
-  constructor(begginingLocation, endingLocation) {
-    this.begginingLocation = begginingLocation;
+  constructor(beginingLocation, endingLocation) {
+    this.beginingLocation = beginingLocation;
     this.endingLocation = endingLocation;
   }
 
@@ -24,8 +24,8 @@ class Route {
   }
 
   blocksTravelled() {
-     let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.begginingLocation.horizontal)
-     let verticalDistance = this.endingLocation.vetical - this.begginingLocation.vertical
+     let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginingLocation.horizontal)
+     let verticalDistance = this.endingLocation.vertical - this.beginingLocation.vertical
      return (Math.abs(horizontalDistance) + Math.abs(verticalDistance))
   }
 
