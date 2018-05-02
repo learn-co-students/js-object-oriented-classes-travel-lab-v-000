@@ -24,7 +24,19 @@ class Route {
     }
     
     blocksTravelled() {
-        debugger
+        let horizontalDistance = Math.abs(this.avenueToInteger(this.beginningLocation.horizontal) - this.avenueToInteger(this.endingLocation.horizontal))
+        
+        let verticalDistance = Math.abs(this.beginningLocation.vertical - this.endingLocation.vertical)
+        
+        return horizontalDistance + verticalDistance
+    }
+    
+    estimatedTime(peak) {
+        if (peak) {
+           return this.blocksTravelled() / 2
+        } else {
+           return this.blocksTravelled() / 3
+        }
     }
 }
 
