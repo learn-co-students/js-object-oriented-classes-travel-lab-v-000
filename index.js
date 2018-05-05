@@ -20,8 +20,19 @@ class Route {
     this.endingLocation = end;
   }
 
+  avenueToInt(ave) {
+    return eastWest.indexOf(ave)
+  }
+
   blocksTravelled(){
-        
+    let horiz = this.avenueToInt(this.endingLocation.horizontal) - this.avenueToInt(this.beginningLocation.horizontal)
+    let vert = this.endingLocation.vertical - this.beginningLocation.vertical;
+    return vert + horiz;
   }  
+
+  estimatedTime(){
+    
+  }
 }
+
 
