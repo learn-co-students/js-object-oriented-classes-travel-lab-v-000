@@ -1,12 +1,37 @@
+let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue'];
 class Driver {
   constructor (name, startDate){
     this.name = name;
     this.startDate = new Date(startDate);
   }
 yearsExperienceFromBeginningOf(endDate) {
-  
+  // console.log(endDate - this.startDate.getFullYear())
+  // console.log(new Date(`${endDate}`).getFullYear());
+  // console.log(this.startDate.getFullYear())
   //this converts endDate to a string and then creates the date object and pulls only the year out
     //it then subtracts the startDate year attribute from it
-    return new Date(`${endDate}`).getFullYear() - this.startDate.getFullYear()
+    return endDate - this.startDate.getFullYear()
+  }
+}
+
+class Route {
+  constructor(beginningLocation, endingLocation){
+    this.beginningLocation = beginningLocation
+    this.endingLocation = endingLocation
+  }
+  avenueToInteger(avenue){
+    return eastWest.indexOf(avenue)
+  }
+  blocksTravelled(){
+    let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginningLocation.horizontal)
+    let verticalDistance = this.endingLocation.vertical - this.beginningLocation.vertical
+    return (Math.abs(horizontalDistance) + Math.abs(verticalDistance))
+  }
+  estimatedTime(peak){
+    if(peak){
+      return this.blocksTravelled()/2
+    } else {
+      return this.blocksTravelled()/3
+    }
   }
 }
