@@ -17,11 +17,14 @@ constructor(beginningLocation,  endingLocation){
 }
 
 blocksTravelled(){
- let horizontal=indexOf(this.endingLocation.horizontal)-indexOf(this.beginningLocation.horizontal);
- let vertical = indexOf(this.endingLocation.vertical)-indexOf(this.beginningLocation.vertical);
- return(horizontal+vertical)
+ let horizontal=eastWest.indexOf(this.endingLocation.horizontal)-eastWest.indexOf(this.beginningLocation.horizontal);
+ let vertical = this.endingLocation.vertical-this.beginningLocation.vertical;
+ return Math.abs(horizontal)+Math.abs(vertical)
 }
-estimatedTime(){
 
+estimatedTime(peak){
+  if (peak){
+    return this.blocksTravelled()/2
+  } else{ return this.blocksTravelled()/3}
 }
 }
