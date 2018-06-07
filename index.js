@@ -1,3 +1,4 @@
+let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue']
 
 class Driver {
   
@@ -19,21 +20,16 @@ class Route {
     this.endingLocation = endingLocation
   }
 
-  blocksTravelled() {
-    let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue']
-    // debugger;
-    
-    let hStart = eastWest.indexOf(this.beginningLocation.horizontal) + 1
+  blocksTravelled() {   
+    let hTotal = Math.abs(eastWest.indexOf(this.beginningLocation.horizontal) - eastWest.indexOf(this.endingLocation.horizontal))
 
-    let hEnd = eastWest.indexOf(this.endingLocation.horizontal) + 1
+    let vTotal = Math.abs(this.beginningLocation.vertical - this.endingLocation.vertical)
 
-    let hTotal = Math.abs(hStart - hEnd)
-
-    return (Math.abs(this.beginningLocation.vertical - this.endingLocation.vertical) + hTotal)
+    return hTotal + vTotal
   }
 
-  estimatedTime(peakhours) {
-    if (peakhours) {
+  estimatedTime(peak) {
+    if (peak) {
       return this.blocksTravelled() / 2
     } else {
       return this.blocksTravelled() / 3
