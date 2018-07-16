@@ -1,6 +1,6 @@
 {
   "name": "js-object-oriented-classes-travel-lab",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "JavaScript Classes in JS Classes Travel for Learn.co",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "lab",
     "class"
   ],
-  "author": "Flatiron School",
+  "author": "@gj",
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
     "url": "https://github.com/learn-co-curriculum/js-object-oriented-classes-travel-lab/issues"
