@@ -16,15 +16,18 @@ class Route {
   }
 
   blocksTravelled(){
-    return this.beginningLocation
+    const vs = this.beginningLocation.vertical
+    const ve = this.endingLocation.vertical
+    const hs = this.beginningLocation.horizontal === 'Park' ? 5 : 1
+    const he = this.endingLocation.horizontal === 'Park' ? 5 : 1
+    return (ve > vs ? ve - vs : vs - ve) + (he > hs ? he - hs : hs - he)
   }
 
-  estimatedTime(){
-
-
-  }
-
-  estimatedTime(){
-
+  estimatedTime(peak = false){
+      if(peak === true){
+        return this.blocksTravelled() / 2
+      }else{
+        return this.blocksTravelled() / 3
+      }
   }
 }
