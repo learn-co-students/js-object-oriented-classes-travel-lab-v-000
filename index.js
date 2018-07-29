@@ -1,24 +1,26 @@
 class Driver {
-  constructor(name, startDate){
-  this.name = name
-  this.startDate = new Date(startDate)
+  constructor(name, startDate) {
+    this.name = name;
+    this.startDate = new Date(startDate);
   }
 
   yearsExperienceFromBeginningOf(year){
-    return (new Date(year) - this.startDate)
+    return (year - this.startDate.getFullYear() -1)
   }
 }
 
-
-
-
-class Routes {
+class Route {
   constructor(beginningLocation, endingLocation){
   this.beginningLocation = beginningLocation
   this.endingLocation = endingLocation
   }
 
   blocksTravelled(){
+    return this.beginningLocation
+  }
+
+  estimatedTime(){
+
 
   }
 
