@@ -11,10 +11,12 @@
 // endDate - this.startDate.getFullYear() give me 22, I need to get 21
 // How do I get the value to return as 21
 // I need to grab the date for the beginning of the year for endDate - setYear()?
-function Driver(name, startDate){
+class Driver {
+  constructor(name, startDate) {
   this.name = name
-  this.startDate = new Date(startDate);
-  this.yearsExperienceFromBeginningOf = function(endDate){
+  this.startDate = new Date(startDate)
+  }
+  yearsExperienceFromBeginningOf(endDate) {
     return endDate - this.startDate.getFullYear() - 1
   }
 }
