@@ -33,4 +33,19 @@ class Route {
         return Math.abs(verticalDistance) + Math.abs(horizontalDistance);
     };
 
+    estimatedTime(truthyArgument){
+        if (truthyArgument){
+            return this.blocksTravelled() / 2;
+        }
+        else {
+            return this.blocksTravelled() / 3;
+        }
+    };
 }
+
+// Remember we are building methods for the objects. These will be called like object.method(). These methods will operate on themselves. 
+// Thus we use this (for the route) instead of passing in the route. 
+
+// Remember we must invoke the methods still with ()'s. 
+
+// Pay very close to how the method is being called. Is it being called on itself, with what arguments if any? What is the format of the input and oututs?
