@@ -19,9 +19,9 @@ class Route {
 
   
   blocksTravelled() {
-    let start_h = (this.start['horizontal'] == 'Park') ? 1 : 2;
+    let start_h = eastWest.indexOf(this.start['horizontal'])
     let start_v = parseInt(this.start['vertical'], 10);
-    let end_h = (this.end['horizontal'] == 'Park') ? 1 : 2;
+    let end_h = eastWest.indexOf(this.end['horizontal'])
     let end_v = parseInt(this.end['vertical'], 10);
 
     let v = Math.abs(start_v - end_v)
