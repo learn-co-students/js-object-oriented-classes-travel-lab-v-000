@@ -28,26 +28,21 @@ class Route {
     let h = Math.abs(start_h - end_h)
     return v + h
   }
+  
+  estimatedTime(peak) {
+    if (peak) {
+      return this.blocksTravelled()/2
+    }
+    else{
+      return this.blocksTravelled()/3
+    }
+  }
 }
 
 
 
-  // describe('blocksTravelled', function() {
-  //   it('calculates the number of blocksTravelled', function() {
-  //     let route = new Route({horizontal: 'Park', vertical: '34'}, {horizontal: 'Park', vertical: '45'})
-  //     expect(route.blocksTravelled()).to.equal(11)
-  //   })
 
-  //   it('calculates the number of horizontal blocks travelled', function() {
-  //     let route = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '34'})
-  //     expect(route.blocksTravelled()).to.equal(4)
-  //   })
 
-  //   it('combines horizontal and vertical blocks travelled', function() {
-  //     let route = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '45'})
-  //     expect(route.blocksTravelled()).to.equal(15)
-  //   })
-  // })
 
   // describe('estimatedTime', function() {
   //   it('estimates time in minutes, with travel time of three blocks in a minute', function() {
