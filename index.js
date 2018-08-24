@@ -24,10 +24,10 @@ class Route {
     }
     estimatedTime(peak){
         if (peak){
-            return Math.round(this.blocksTravelled()/2);
+            return this.blocksTravelled()/2;
         }
         else {
-            return Math.round(this.blocksTravelled()/ 3);
+            return this.blocksTravelled()/ 3;
         }
     }
 }
