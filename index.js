@@ -11,10 +11,10 @@
 class Driver {
   constructor(name, startDate) {
     this.name = name;
-    this.startDate = new Date();
+    this.startDate = new Date(startDate);
   }
   yearsExperienceFromBeginningOf(currentYear) {
     const year = this.startDate.getFullYear();
-    return currentYear - `${year}`;
+    return (currentYear - `${year}`) - 1;
   }
 }
