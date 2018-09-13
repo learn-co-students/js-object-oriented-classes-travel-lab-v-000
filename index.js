@@ -39,4 +39,12 @@ class Route {
     let horizontal = horizontalcalc(eastWest, this.horizontal2) - horizontalcalc(eastWest, this.horizontal1)
     return horizontal + vertical
   }
+  estimatedTime(condition = false) {
+    let traveltime = this.blocksTravelled()
+    if (condition === false) {
+      return traveltime / 3
+    } else {
+    return traveltime / 2
+    }
+  }
 }
