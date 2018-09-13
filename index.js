@@ -24,9 +24,7 @@ class Route{
 
   avenuesTravelled(){
     return Math.abs(
-      avenues.findIndex(street => this.pickup.horizontal == street)
-      - 
-      avenues.findIndex(street => this.dropOff.horizontal == street)
+      avenues.indexOf(this.pickup.horizontal) - avenues.indexOf(this.dropOff.horizontal)
     )
   }
 
@@ -34,7 +32,7 @@ class Route{
     return this.avenuesTravelled() + this.streetsTravelled()
   }
 
-  estimatedTime(peak){
-    return this.blocksTravelled() / (peak ? 2 : 3)
+  estimatedTime(isPeak){
+    return this.blocksTravelled() / (isPeak ? 2 : 3)
   }
 }
