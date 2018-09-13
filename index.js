@@ -1,3 +1,6 @@
+const avenues = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue',
+  'Park', 'Madison Avenue', '5th Avenue']
+
 class Driver{
   constructor(name, startDate){
     this.name = name
@@ -15,24 +18,23 @@ class Route{
     this.dropOff = dropOff
   }
   
-  distance(a, b){
-    if (a === b){ return 0 }
-    return Math.abs((parseInt(a) || 0) - (parseInt(b) || 0))
+  streetsTravelled(){
+    return Math.abs(this.pickup.vertical - this.dropOff.vertical)
   }
 
-  verticalBlocksTravelled(){
-    return this.distance(this.pickup.vertical, this.dropOff.vertical)
-  }
-  
-  horizontalBlocksTravelled(){
-    return this.distance(this.pickup.horizontal, this.dropOff.horizontal)
+  avenuesTravelled(){
+    return Math.abs(
+      avenues.findIndex(street => this.pickup.horizontal == street)
+      - 
+      avenues.findIndex(street => this.dropOff.horizontal == street)
+    )
   }
 
   blocksTravelled(){
-    return this.verticalBlocksTravelled() + this.horizontalBlocksTravelled()
+    return this.avenuesTravelled() + this.streetsTravelled()
   }
 
-  estimatedTime(){
-    return this.blocksTravelled() * 3
+  estimatedTime(peak){
+    return this.blocksTravelled() / (peak ? 2 : 3)
   }
 }
