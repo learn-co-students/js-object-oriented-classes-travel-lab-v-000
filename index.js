@@ -17,7 +17,7 @@ let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'P
 
 class Route {
 
-  constructor(beginningLocation = {horizontal: input, vertical: input}, endingLocation = {horizontal: input, vertical: input}) {
+  constructor(beginningLocation, endingLocation) {
     this.beginningLocation = beginningLocation
     this.endingLocation = endingLocation
   }
@@ -30,8 +30,8 @@ class Route {
     return horizontalDistance + verticalDistance
   }
 
-  estimatedTime(peakhour) {
-    if (peakhour === true) {
+  estimatedTime(peakHour) {
+    if (peakHour) {
       return this.blocksTravelled() * 1/2
     } else {
       return this.blocksTravelled() * 1/3
