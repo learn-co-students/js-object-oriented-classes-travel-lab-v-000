@@ -8,7 +8,7 @@ class Driver{
 yearsExperienceFromBeginningOf(year) {
   let endDate = new Date(year, 1, 1);
   // format in stack overflow new Date(Year, Month, Day)
-  
+
   let totalYears = (endDate.getUTCFullYear() - this.startDate.getUTCFullYear());
   return totalYears;
 }
@@ -41,14 +41,6 @@ return horizontalDistance + verticalDistance;
 }
 
 estimatedTime(peak){
-  if (peak) {
-    // console.log('peak',this.blocksTravelled()/2);
-   return  this.blocksTravelled()/2;
- }
-   else {
-    // console.log('offpeak',this.blocksTravelled()/3);
-   return this.blocksTravelled()/3;
+    return peak ? (this.blocksTravelled()/2) : (this.blocksTravelled()/3);
 }
-}
-
 };
