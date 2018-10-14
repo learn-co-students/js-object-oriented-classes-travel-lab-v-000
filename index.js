@@ -13,20 +13,21 @@
  class Route{
    constructor(beginning, end){
      this.beginningLocation = beginning
-     this.endLocation = end
+     this.endingLocation = end
    }
    blocksTravelled(){
-     // const bh = Object.keys(beginning)[0]
-     // const bv = Object.keys(beginning)[1]
-     // const eh = Object.keys(beginning)[0]
-     // const ev = Object.keys(beginning)[1]
      let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue']
-     const vert = (this.endLocation['vertical'] - this.beginningLocation['vertical']).abs()
-     const horizontal = (eastWest.indexOf(beginning['horizontal']) - eastWest.indexOf(end['horizontal'])).abs()
-     return vert + horizontal
+     const vertDistance = (this.endingLocation['vertical'] - this.beginningLocation['vertical'])
+     const horizontalDistance = (eastWest.indexOf(this.beginningLocation['horizontal']) - eastWest.indexOf(this.endingLocation['horizontal']))
+     return Math.abs(vertDistance) + Math.abs(horizontalDistance)
    }
 
-   estimatedTime(){
-
+   estimatedTime(peak){
+     const blocks = this.blocksTravelled()
+     if (peak){
+      return blocks/2
+    } else{
+      return blocks/3
+    }
    }
  }
