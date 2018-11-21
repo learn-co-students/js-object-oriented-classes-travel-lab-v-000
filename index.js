@@ -22,11 +22,7 @@ class Route {
   }
 
   convertAvenue(avenueName) {
-    if (eastWest.indexOf(avenueName) > -1) {
-      return eastWest.indexOf(avenueName);
-    } else {
-      return 0;
-    }
+    return eastWest.indexOf(avenueName);
   }
 
   blocksTravelled() {
