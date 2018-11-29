@@ -11,6 +11,7 @@ class Driver {
   }
 }
 let eastWest = ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue']
+
 class Route {
   constructor (beginningLocation, endingLocation) {
     this.beginningLocation = beginningLocation;
@@ -24,5 +25,11 @@ class Route {
     let vertical = this.beginningLocation.vertical - this.endingLocation.vertical;
     return Math.abs(horizontal) + Math.abs(vertical)
   }
-  estimatedTime() {}
+  estimatedTime(peakHour) {
+    if (peakHour) {
+      return Math.floor(this.blocksTravelled() / 2);
+    } else {
+      return Math.floor(this.blocksTravelled() / 3);
+    }
+  }
 }
