@@ -30,7 +30,7 @@ class Route {
     avenueToInteger( avenue ) {
         return eastWest.indexOf( avenue );
       }
-      //sample location is { horizontal: 'Park', vertical: '34' }
+      //sample location looks like { horizontal: 'Park', vertical: '34' }
     blocksTravelled() {
         let horizontalDistance =
         //get the index of the starting location for travel across avenues 
