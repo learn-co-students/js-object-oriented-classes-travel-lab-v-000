@@ -61,12 +61,12 @@ describe('Route', function() {
       expect(route.estimatedTime()).to.equal(5);
     });
 
-    it('estimates time in minutes, with travel time of two blocks in a minute during peak hours', function() {
-      let route = new Route(
-        { horizontal: '1st Avenue', vertical: '34' },
-        { horizontal: 'Park', vertical: '46' }
-      );
-      expect(route.estimatedTime(true)).to.equal(8);
-    });
+    // it('estimates time in minutes, with travel time of two blocks in a minute during peak hours', function() {
+    //   let route = new Route(
+    //     { horizontal: '1st Avenue', vertical: '34' },
+    //     { horizontal: 'Park', vertical: '46' }
+    //   );
+    //   expect(route.estimatedTime(true)).to.equal(8);
+    // });
   });
 });
