@@ -1,3 +1,12 @@
+let eastWest = [
+  '1st Avenue',
+  '2nd Avenue',
+  '3rd Avenue',
+  'Lexington Avenue',
+  'Park',
+  'Madison Avenue',
+  '5th Avenue'
+];
 
 class Driver {
   constructor(name, startDate){
@@ -5,7 +14,9 @@ class Driver {
     this.startDate = new Date(startDate);
   }
   yearsExperienceFromBeginningOf(year) {
-    return new Date(year).getUTCFullYear() - this.startDate.getUTCFullYear();
+    let endDate = new Date(year, 1, 1);
+    let totalYears = (endDate - this.startDate) / (365 * 24 * 60 * 60 * 1000);
+    return parseInt(totalYears);
   }
 }
 
@@ -23,7 +34,7 @@ class Route {
     let verticalDistance = this.endingLocation.vertical - this.beginningLocation.vertical;
     let horizontalDistance =
       this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginningLocation.horizontal);
-    return verticalDistance + horizontalDistance;
+     return Math.abs( horizontalDistance ) + Math.abs( verticalDistance );
   }
 
   estimatedTime(peak){
@@ -34,13 +45,3 @@ class Route {
     }
   }
 }
-
-let eastWest = [
-  '1st Avenue',
-  '2nd Avenue',
-  '3rd Avenue',
-  'Lexington Avenue',
-  'Park',
-  'Madison Avenue',
-  '5th Avenue'
-];
