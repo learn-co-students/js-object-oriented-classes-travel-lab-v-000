@@ -24,14 +24,16 @@ class Route {
     this.beginningLocation = beginningLocation;
     this.endingLocation = endingLocation;
   }
-  
+
   blocksTravelled() {
+    debugger;
     let horizontalTotal = Math.abs(parseInt(this.beginningLocation.horizontal) - parseInt(this.endingLocation.horizontal))
-    
+
     if (this.beginningLocation.vertical === this.endingLocation.vertical) {
       return horizontalTotal;
     } else {
-      
+        let verticalTotal = Math.abs(eastWest.indexOf(this.beginningLocation.vertical) - eastWest.indexOf(this.endingLocation.vertical))
+        return (horizontalTotal + verticalTotal);
     }
   }
 }
