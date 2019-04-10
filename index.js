@@ -26,14 +26,21 @@ class Route {
   }
 
   blocksTravelled() {
-    debugger;
-    let horizontalTotal = Math.abs(parseInt(this.beginningLocation.horizontal) - parseInt(this.endingLocation.horizontal))
+    let verticalTotal = Math.abs(parseInt(this.beginningLocation.vertical) - parseInt(this.endingLocation.vertical))
 
-    if (this.beginningLocation.vertical === this.endingLocation.vertical) {
-      return horizontalTotal;
+    if (this.beginningLocation.horizontal === this.endingLocation.horizontal) {
+      return verticalTotal;
     } else {
-        let verticalTotal = Math.abs(eastWest.indexOf(this.beginningLocation.vertical) - eastWest.indexOf(this.endingLocation.vertical))
+        let horizontalTotal = Math.abs(eastWest.indexOf(this.beginningLocation.horizontal) - eastWest.indexOf(this.endingLocation.horizontal));
         return (horizontalTotal + verticalTotal);
+    }
+  }
+
+  estimatedTime(peak) {
+    if (peak === true) {
+      return this.blocksTravelled() / 2;
+    } else {
+      return this.blocksTravelled() / 3;
     }
   }
 }
