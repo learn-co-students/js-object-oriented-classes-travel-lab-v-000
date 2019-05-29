@@ -1,3 +1,13 @@
+let eastWest = [
+    '1st Avenue',
+    '2nd Avenue',
+    '3rd Avenue',
+    'Lexington Avenue',
+    'Park',
+    'Madison Avenue',
+    '5th Avenue'
+]
+
 class Driver {
     constructor(name, startDate) {
     this.name = name;
@@ -15,31 +25,24 @@ class Route {
     this.endingLocation = endingLocation;
     }
 
+    avenueToInteger(avenue) {
+        return eastWest.indexOf(avenue)
+    }
+
     blocksTravelled() {
-        let northSouth = endingLocation - beginningLocation;
-        let eastWest = [
-            '1st Avenue',
-            '2nd Avenue',
-            '3rd Avenue',
-            'Lexington Avenue',
-            'Park',
-            'Madison Avenue',
-            '5th Avenue'
-          ];
+         let horizontalInteger = this.avenueToInteger(this.endingLocation.horizontal) -
+          this.avenueToInteger(this.beginningLocation.horizontal);
 
-          const index = beginningLocation.findIndex(horizontal => horizontal === eastWest) 
+          let verticalInteger = parseInt(this.endingLocation.vertical) - parseInt(this.beginningLocation.vertical)
+          return Math.abs(horizontalInteger) + Math.abs(verticalInteger)
+    }
 
-          
-          if beginningLocation == eastWest || endingLocation == eastWest {
-            let start = eastWest.findIndex
-            let end = eastWest.findIndex
-                return end - start;
-          }
-          else {
-            return endingLocation - beginningLocation
-          }
-        
-          
-
+    estimatedTime(peak) {
+        if (peak) {
+            return this.blocksTravelled()/2
+        }
+        else {
+            return this.blocksTravelled()/3
+        }
     }
 }
