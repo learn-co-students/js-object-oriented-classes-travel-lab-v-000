@@ -24,7 +24,7 @@ describe('driver', function() {
 });
 
 describe('Route', function() {
-  let route;
+   let route;
 
   describe('blocksTravelled', function() {
     it('calculates the number of blocksTravelled', function() {
