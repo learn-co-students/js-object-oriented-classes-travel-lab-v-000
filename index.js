@@ -24,8 +24,20 @@ avenueToInteger(avenue) {
 }
 
 blocksTravelled() {
-	let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginningLocation.horizontal)
+	let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginningLocation.horizontal);
 	let verticalDistance = this.endingLocation.vertucal - this.beginningLocation.vertical;
 	return horizontalDistance + verticalDistance;
 	}
-}
+	estimatedTime(peak) {
+	if (peak) {
+		return this.blocksTravelled() / 2;
+		}
+		else {
+		return this.blocksTravelled() / 3;
+    	}}
+	}
+
+newRoute = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '45'});
+
+newRoute.blocksTravelled();
+newRoute.estimatedTime("y");
