@@ -4,12 +4,13 @@ class Driver {
     this.startDate = new Date(startDate);
     }
 
-yerasExperienceFromBeginningOf(year) {
+yearsExperienceFromBeginningOf(year) {
 	let endDate = new Date(year,0,1);
 	console.log(endDate);
-	let totalYears = (endDate - this.startDate) / (365*24*60*60*60*1000);
+	let totalYears = (endDate - this.startDate) / (365*24*60*60*1000);
 	console.log(totalYears);
-	let roundedTotalYears = Math.roundd(totalYears);
+	let roundedTotalYears = Math.round(totalYears);
+	console.log(roundedTotalYears)
 	return roundedTotalYears;
   }
 }
@@ -25,7 +26,7 @@ avenueToInteger(avenue) {
 
 blocksTravelled() {
 	let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginningLocation.horizontal);
-	let verticalDistance = this.endingLocation.vertucal - this.beginningLocation.vertical;
+	let verticalDistance = this.endingLocation.vertical - this.beginningLocation.vertical;
 	return horizontalDistance + verticalDistance;
 	}
 	estimatedTime(peak) {
