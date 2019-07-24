@@ -6,29 +6,28 @@ class Driver {
 
 yearsExperienceFromBeginningOf(year) {
 	let endDate = new Date(year,0,1);
-	console.log(endDate);
 	let totalYears = (endDate - this.startDate) / (365*24*60*60*1000);
-	console.log(totalYears);
 	let roundedTotalYears = Math.round(totalYears);
-	console.log(roundedTotalYears)
 	return roundedTotalYears;
   }
 }
 
 class Route {
-constructor(beginningLocation, endingLocation) {
-	this.beginningLocation = beginningLocation;
-	this.endingLocation = endingLocation;
-}
+	constructor(beginningLocation, endingLocation) {
+		this.beginningLocation = beginningLocation;
+		this.endingLocation = endingLocation;
+    }
 avenueToInteger(avenue) {
 	return eastWest.indexOf(avenue);
 }
 
 blocksTravelled() {
-	let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) - this.avenueToInteger(this.beginningLocation.horizontal);
+	let horizontalDistance = this.avenueToInteger(this.endingLocation.horizontal) -
+	this.avenueToIntege(this.beginningLocation.horizontal);
 	let verticalDistance = this.endingLocation.vertical - this.beginningLocation.vertical;
-	return horizontalDistance + verticalDistance;
+	return horizontalDistace + verticalDistance;
 	}
+	
 	estimatedTime(peak) {
 	if (peak) {
 		return this.blocksTravelled() / 2;
