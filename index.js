@@ -1,10 +1,19 @@
 class Driver {
   constructor(name, date) {
     this.name = name;
-    this.date = date;
-  }
+    this.startDate = new Date(2020, 3, 5);
+    // function () {
+      // debugger
+      // let splitDate = date.split(' ');
+      // let year = splitDate[2];
 
-  startDate() {
-    
-  }
+      // return new Date(2020, 3, 5)
+    }
+
+    // debugger
+  // }
+
+  // dateMaker() {
+
+  // }
 }
