@@ -46,4 +46,12 @@ class Route {
 
     return horizontalBlocks + verticalBlocks;
   }
+
+  estimatedTime(peak) {
+    if (peak === true) {
+      return this.blocksTravelled() / 2;
+    } else {
+      return this.blocksTravelled() / 3;
+    }
+  }
 }
